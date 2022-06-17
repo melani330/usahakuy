@@ -1,13 +1,15 @@
 import * as React from "react";
 import Footer from "./components/footer";
 import Navbar from "./components/Navbar";
+import Tentang from "./components/tentang";
 
 function App() {
   return (
     <div>
       <Navbar />
       <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ullam
+        <Tentang/>
+        {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ullam
         alias! Ex velit modi et itaque cupiditate blanditiis officia debitis
         explicabo corporis maxime magni, quos est accusantium totam asperiores
         sint tempore, voluptates voluptas molestias! Similique quisquam hic vel
@@ -27,7 +29,7 @@ function App() {
         asperiores laudantium quisquam minus aut harum officiis nulla mollitia
         vitae veniam molestiae eius accusantium corrupti, magnam rem quo? Ab
         natus omnis eligendi perferendis fuga temporibus nisi culpa vel, nihil
-        dolores id velit aliquid expedita mollitia dolorem in saepe.
+        dolores id velit aliquid expedita mollitia dolorem in saepe. */}
       </div>
       <Footer />
     </div>
