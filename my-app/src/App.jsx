@@ -8,10 +8,16 @@ import data from "./data/pendaftaran.json"
 function App() {
   return (
     <div>
-      <Navbar />
-      <Tentang/>
-      <Pendaftaran data={data}/> 
-      <Footer />
+//       <Navbar />
+// <<<<<<< main
+//       <Tentang/>
+//       <Pendaftaran data={data}/> 
+// =======
+//       <div>
+//         <Tentang />
+//       </div
+// >>>>>>> dev-apip
+//       <Footer />
     </div>
   );
 }
