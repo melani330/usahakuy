@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import gambar from "./meeting-bro.svg";
 import "../css/tentang.css"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -23,7 +23,7 @@ const theme = createTheme(
 
 export default function Tentang() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} class="tentang_theme">
       <CssBaseline />
       <main>
         {/* Hero unit */}
@@ -32,10 +32,20 @@ export default function Tentang() {
             bgcolor: 'background.paper',
             pt: 8,
             pb: 6,
-            display: 'flex', flexDirection: 'row'
+            // display: 'flex', flexDirection: 'row',
+            width: '100%' 
           }}
         >
-          <Container maxWidth="sm">
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6} >
+            <CardMedia
+            component="img"
+            class="tentang_image"
+            image={gambar}
+            alt="Live from space album cover"
+          />
+        </Grid>
+        <Grid item xs={6}>
             <Typography
               component="h1"
               variant="h2"
@@ -55,18 +65,12 @@ export default function Tentang() {
               direction="row"
               spacing={5}
               justifyContent="left"
+              padding-right="20px"
             >
               <Button variant="contained" background-color="primary">Daftar Sekarang</Button>
             </Stack>
-          </Container>
-          <Container  maxWidth="ms">
-            <CardMedia
-            component="img"
-            sx={{ width: 700, height: 450 }}
-            image={gambar}
-            alt="Live from space album cover"
-          />
-        </Container>
+          </Grid>
+          </Grid>
         </Box>
        
       </main>
