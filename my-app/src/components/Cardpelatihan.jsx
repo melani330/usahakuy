@@ -4,13 +4,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
-import { COURSEDATA } from "../data/datapelatihan";
+import { COURSE_DATA } from "../data/datapelatihan";
 
 function Pelatihancard() {
   return (
-    <div>
+    <>
       <Grid container spacing={2}>
-        {COURSEDATA.map((course, index) => {
+        {COURSE_DATA.map((course, index) => {
           return (
             <Grid key={index} item xs={12} sm={6} md={4}>
               <Card
@@ -64,7 +64,7 @@ function Pelatihancard() {
           );
         })}
       </Grid>
-    </div>
+    </>
   );
 }
 
