@@ -1,4 +1,4 @@
-export const COURSEDATA = [
+export const COURSE_DATA = [
   {
     image: "http://simpleicon.com/wp-content/uploads/picture.png",
     title: "Pelatihan 1",
