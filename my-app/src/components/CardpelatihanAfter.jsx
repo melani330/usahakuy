@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions, Grid } from "@mui/material";
-import { COURSE_DATA } from "../data/datapelatihan";
+import { COURSE_DATA } from "../data/pelatihan";
 
 function Pelatihancard() {
   return (

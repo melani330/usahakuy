@@ -1,13 +1,12 @@
 import React from "react";
-import Navbarpelatihan from "../components/navbar/Navbarpelatihan";
-import Cardpelatihan from "../components/Cardpelatihan";
+import Cardpelatihan from "../components/CardpelatihanAfter";
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Pelatihan() {
   return (
-    <div>
-      <Navbarpelatihan />
-      <Box sx={{ p: 3, marginTop:10, marginLeft: "5%" }}>
+    <div id="pelatihanafter">
+      <Box sx={{ p: 3, marginLeft: "5%" }}>
         <Box
           component="span"
           m={1}
@@ -19,7 +18,9 @@ function Pelatihan() {
           <Typography>
             <h2>List Pelatihan</h2>
           </Typography>
-          {/* <Button color="secondary">{"Lihat Semua >>>"}</Button> */}
+          <Link to="/pelatihan">
+            <Typography className="sign">{"Lihat Semua >>>"}</Typography>
+          </Link>
         </Box>
         <Cardpelatihan />
       </Box>

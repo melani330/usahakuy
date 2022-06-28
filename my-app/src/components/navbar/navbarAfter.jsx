@@ -4,25 +4,26 @@ import {
   Tabs,
   Tab,
   Toolbar,
-  Button,
   useMediaQuery,
   useTheme,
   Typography,
 } from "@mui/material";
 import logo from "./logo.png";
-import Drawercomp from "./Drawercomp";
+import Drawercomp from "../Drawercomp";
+import "./navbar.css";
+import { Link } from 'react-router-dom';
+import { lightBlue } from '@mui/material/colors';
 
-const Pages = ["About", "Products", "Contact Us"];
+const indicator = lightBlue[200];
 
-function Navbar() {
+function NavbarAfter() {
   const [value, setValue] = useState();
   const theme = useTheme();
-
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-
+  
   return (
     <React.Fragment>
-      <AppBar position="relative" sx={{ background: "#4fc3f7" }}>
+      <AppBar position="fixed" sx={{ background: "#4fc3f7" }}>
         <Toolbar>
           <img src={logo} alt="Logo" width={75} height={75} />
           {isMatch ? (
@@ -41,24 +42,15 @@ function Navbar() {
                 textColor="inherit"
                 value={value}
                 onChange={(e, value) => setValue(value)}
-                indicatorColor="secondary"
+                indicatorColor={indicator}
               >
-                {Pages.map((page, index) => (
-                  <Tab key={index} label={page} />
-                ))}
+                <Tab label="Tentang" href="#tentang" className='page-scroll'/>
+                <Tab label="Pendaftaran" href="#pendaftaran" className='page-scroll'/>
+                <Tab label="Pelatihan" href="#pelatihanafter" className='page-scroll'/>
+                <Tab label="Coach" href="#coach" className='page-scroll'/>
+                <Tab label="Kontak" href="#footer" className='page-scroll'/>
               </Tabs>
-              <Button
-                sx={{ marginLeft: "auto", color: "black" }}
-                variant="contained"
-              >
-                Login
-              </Button>
-              <Button
-                sx={{ marginLeft: "10px", color: "black" }}
-                variant="contained"
-              >
-                Sign Up
-              </Button>
+                <Link to="/" className='btn btn-navbar'>Sign Out</Link>
             </>
           )}
         </Toolbar>
@@ -67,4 +59,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarAfter;
