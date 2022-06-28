@@ -1,23 +1,28 @@
-import * as React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Logo from './logo.png'
-import NavbarSignIn from '../components/navbar/navbarSignin';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+import * as React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import logo from "../Pages/logo.png";
+import NavbarSignIn from "../components/navbar/navbarSignin";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 
 function Copyright(props: any) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © Usahakuy.ID'}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © Usahakuy.ID"}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -29,8 +34,8 @@ function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get("email"),
+      password: data.get("password"),
     });
   };
 
@@ -38,20 +43,25 @@ function SignIn() {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <NavbarSignIn/>
+        <NavbarSignIn />
         <Box
           sx={{
             marginTop: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-            <img src={Logo} alt="Logo" width={100} height={100} />
+          <img src={logo} alt="Logo" width={100} height={100} />
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
               margin="normal"
               required
@@ -77,12 +87,13 @@ function SignIn() {
               label="Remember me"
             />
             <Link to="/after">
-            <Typography sx={{mb: 3, mt: 3}}
-            className="btn btn-custom" 
-            align="center"
-            >
-              Sign In
-            </Typography>
+              <Typography
+                sx={{ mb: 3, mt: 3 }}
+                className="btn btn-custom"
+                align="center"
+              >
+                Sign In
+              </Typography>
             </Link>
             <Grid container>
               <Grid item xs>
@@ -92,8 +103,8 @@ function SignIn() {
               </Grid>
               <Grid item>
                 <Link to="/signUp">
-                <Typography className="sign">
-                  Belum Memiliki Akun? Daftar
+                  <Typography className="sign">
+                    Belum Memiliki Akun? Daftar
                   </Typography>
                 </Link>
               </Grid>
