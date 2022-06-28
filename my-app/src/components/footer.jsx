@@ -4,12 +4,11 @@ import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import * as React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: "#e0f2f1",
     },
     secondary: {
       main: "#f44336",
@@ -20,6 +19,7 @@ const theme = createTheme({
 
 export default function Footer() {
   return (
+    <div id="footer">
     <ThemeProvider theme={theme}>
       <footer>
         <Box
@@ -32,7 +32,7 @@ export default function Footer() {
             <Grid container spacing={6} textAlign="center">
               <img src="images/logo-tp.png" alt="logo" w="" />
               <Grid item xs={12} sm={4} md={3}>
-                <Box borderBottom={1}>Help</Box>
+                <Box borderBottom={2}>Help</Box>
                 <Box>
                   <Link href="/" color="primary">
                     Contact
@@ -50,7 +50,7 @@ export default function Footer() {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={4} md={3}>
-                <Box borderBottom={1}>Account</Box>
+                <Box borderBottom={2}>Account</Box>
                 <Box>
                   <Link href="/" color="primary">
                     Login
@@ -63,7 +63,7 @@ export default function Footer() {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={4} md={3}>
-                <Box borderBottom={1}>Programs</Box>
+                <Box borderBottom={2}>Programs</Box>
                 <Box>
                   <Link href="/" color="primary">
                     Training
@@ -87,6 +87,7 @@ export default function Footer() {
         </Box>
       </footer>
     </ThemeProvider>
+    </div>
   );
 }
 

@@ -1,13 +1,12 @@
 
 import CardMedia from '@mui/material/CardMedia';
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import gambar from "./meeting-bro.svg";
+import gambar from "../images/meeting-bro.svg";
 import "../css/tentang.css"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -21,53 +20,62 @@ const theme = createTheme(
     }
 );
 
-export default function Tentang() {
+export default function Tentang(props) {
   return (
-    <ThemeProvider theme={theme} class="tentang_theme">
+  <div id="tentang">
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <main>
         {/* Hero unit */}
         <Box
           sx={{
             bgcolor: 'background.paper',
-            pt: 8,
-            pb: 6,
-            // display: 'flex', flexDirection: 'row',
+            pt: 20,
+            pb: 15,
+            pl: 10,
+            pr: 10,
             width: '100%' 
           }}
         >
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6} >
+          <Grid container spacing={6} textAlign="center">
+          <Grid item xs={12} sm={12} md={6}>
             <CardMedia
             component="img"
-            class="tentang_image"
+            className="tentang_image"
             image={gambar}
             alt="Live from space album cover"
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={12} md={6}>
             <Typography
-              component="h1"
-              variant="h2"
+              mb= {6}
+              pb={2}
+              component="h3"
+              variant="h4"
               align="left"
               color="text.primary"
               gutterBottom
-              class="judul"
+              className="judul"
             >
-              Tentang Usahakuy<span>.</span>ID
+              TENTANG USAHAKUY<span>.</span>ID
             </Typography>
-           
-            <Typography variant="h8" align="left" color="text.secondary" paragraph>
+            <Typography 
+              variant="h8" 
+              align="justify" 
+              color="text.secondary" 
+              paragraph>
             Usahakuy.id merupakan pelatihan kewirausahaan berbasis website. Usahakuy.id menawarkan pelatihan-pelatihan menarik yang sangat dibutuhkan dalam dunia entrepreneur atau kewirausahaan melalui coaching yang diberikan untuk mempersiapkan calon wirausahawan agar dapat menjadi wirausahawan yang sukses dengan membantu meningkatkan kapasitas dan kemampuan SDM pelaku wirausaha dan masyarakat yang belum mampu mengatasi persoalan di dunia kewirausahaan.
             </Typography>
             <Stack
-              sx={{ pt: 6 }}
+              sx={{ pt: 3 }}
               direction="row"
               spacing={5}
               justifyContent="left"
               padding-right="20px"
             >
-              <Button variant="contained" background-color="primary">Daftar Sekarang</Button>
+              <button className='btn btn-custom' href="#pendaftaran">
+                  Pelajari Lebih Lanjut
+                </button>
             </Stack>
           </Grid>
           </Grid>
@@ -76,5 +84,6 @@ export default function Tentang() {
       </main>
    
     </ThemeProvider>
+    </div>
   );
 }

@@ -5,23 +5,27 @@ import "../css/pendaftaran.css";
 
 const Pendaftaran = (props)=> {
   return (
-    <div id='features' className='text-center'>
+    <div id='pendaftaran' className='text-center'>
       <div className='container'>
         <div className='col-md-10 col-md-offset-1 section-title'>
           <Typography
-              component="h1"
-              variant="h2"
+              mb= {3}
+              mt= {3}
+              pb= {2}
+              component="h3"
+              variant="h4"
               align="center"
               color="text.primary"
               gutterBottom
-              class="judul_pendaftaran"
+              className="judul_pendaftaran"
             >
-              Tahapan Pendaftaran
+              TAHAPAN PENDAFTARAN
             </Typography>
+            
             {/* <h2>tahapan pendaftaran</h2> */}
         </div>
         <div className='row'>
-          {props.data.map((d, i) => (
+          {props.DataPendaftaran.map((d, i) => (
                 <div key={`${d.title}-${i}`} className='col-xs-6 col-md-3'>
                   {' '}
                   <i className={d.icon}></i>

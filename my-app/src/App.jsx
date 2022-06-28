@@ -1,4 +1,5 @@
 import * as React from "react";
+<<<<<<< Updated upstream
 import Footer from "./components/footer";
 import Navbar from "./components/Navbar";
 import Tentang from "./components/tentang";
@@ -12,6 +13,14 @@ function App() {
       <Tentang/>
       <Pendaftaran data={data}/> 
       <Footer />
+=======
+import Home from "./pagesRouter/Home"
+
+function App() {
+  return (
+    <div className="App">
+      <Home/>
+>>>>>>> Stashed changes
     </div>
   );
 }
