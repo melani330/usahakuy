@@ -9,8 +9,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
-// const Pages = ["Sign In", "Sign Up"];
-
 function Drawercompbefore() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -21,13 +19,6 @@ function Drawercompbefore() {
         onClose={() => setOpenDrawer(false)}
       >
         <List>
-          {/* {Pages.map((page, index) => (
-            <ListItemButton onClick={() => setOpenDrawer(false)} key={index}>
-              <ListItemIcon>
-                <ListItemText>{page}</ListItemText>
-              </ListItemIcon>
-            </ListItemButton>
-          ))} */}
           <ListItemButton onClick={() => setOpenDrawer(false)}>
             <ListItemText>
               <Link to="/signIn">Sign In</Link>
