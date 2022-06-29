@@ -10,7 +10,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
-// const Pages = ["Tentang", "Tahap Pendaftaran", "Coach", "Kontak", "Sign Out"];
 function Drawercomp() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -20,15 +19,6 @@ function Drawercomp() {
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
-        {/* <List>
-          {Pages.map((page, index) => (
-            <ListItemButton onClick={() => setOpenDrawer(false)} key={index}>
-              <ListItemIcon>
-                <ListItemText>{page}</ListItemText>
-              </ListItemIcon>
-            </ListItemButton>
-          ))}
-        </List> */}
         <List>
           <ListItemButton onClick={() => setOpenDrawer(false)}>
             <Tab label="Tentang" href="#tentang" className="page-scroll" />
