@@ -14,12 +14,12 @@ export default function NavbarSignIn() {
         <Toolbar>
           {/* <img src={logo} alt="Logo" width={75} height={75} /> */}
           <Button color="inherit" sx={{ marginRight: "auto", color: "black" }}>
-          <Link to="/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+          <Link className="white" to="/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
                Kembali
             </Link>
           </Button>
           <Button color="inherit" sx={{ marginLeft: "auto", color: "black" }}>
-          <Link to="/signUp">
+          <Link className="white" to="/signUp">
             Sign Up
             </Link>
           </Button>
