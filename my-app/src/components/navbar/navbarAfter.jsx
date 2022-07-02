@@ -11,7 +11,7 @@ import {
 import logo from "./logo.png";
 import Drawercomp from "../Drawercomp";
 import "./navbar.css";
-import { Link } from 'react-router-dom';
+import LogoutModal from "../Modal/logoutModal.tsx"
 import { lightBlue } from '@mui/material/colors';
 
 const indicator = lightBlue[200];
@@ -50,7 +50,7 @@ function NavbarAfter() {
                 <Tab label="Coach" href="#coach" className='page-scroll'/>
                 <Tab label="Kontak" href="#footer" className='page-scroll'/>
               </Tabs>
-                <Link to="/" className='btn btn-navbar'>Sign Out</Link>
+              <LogoutModal/>
             </>
           )}
         </Toolbar>

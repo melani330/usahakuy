@@ -2,8 +2,8 @@ import * as React from "react";
 import BeforePage from "./before";
 import AfterPage from "./after";
 import PelatihanPage from "../Pages/Pelatihan";
-import SignInPage from "../Pages/signIn.tsx";
-import SignUpPage from "../Pages/signUp.tsx";
+import SignInPage from "../userStorage/signIn";
+import SignUpPage from "../userStorage/signUp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function Home() {
