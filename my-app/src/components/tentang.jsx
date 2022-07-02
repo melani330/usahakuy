@@ -30,8 +30,8 @@ export default function Tentang(props) {
         <Box
           sx={{
             bgcolor: 'background.paper',
-            pt: 20,
-            pb: 15,
+            pt: 10,
+            pb: 10,
             pl: 10,
             pr: 10,
             width: '100%' 
