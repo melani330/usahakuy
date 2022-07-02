@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "../css/sign.css";
 import NavbarSignUp from "../components/navbar/navbarSignUp";
-import { NavLink } from "react-router-dom";
+import { NavLink, BrowserRouter as Router, useHistory } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import logo from "../images/logo.png";
-import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 function SignUp() {
@@ -74,11 +73,11 @@ function SignUp() {
   };
 
   return (
-    <>
+    <Router>
       <NavbarSignUp />
       <div className="outer">
         <div className="inner">
-          <form onSubmit={addData}>
+          <form onSubmit={addData} data-testid="signup-form">
             <div className="image-sign">
               <img src={logo} alt="Logo" width={100} height={100} />
             </div>
@@ -128,7 +127,11 @@ function SignUp() {
               autoFocus
               onChange={getdata}
             ></TextField>
-            <button type="submit" className="btn btn-sign">
+            <button
+              data-testid="signup-button"
+              type="submit"
+              className="btn btn-sign"
+            >
               Sign Up
             </button>
             <p className="forgot-password text-right">
@@ -141,7 +144,7 @@ function SignUp() {
           <ToastContainer />
         </div>
       </div>
-    </>
+    </Router>
   );
 }
 
