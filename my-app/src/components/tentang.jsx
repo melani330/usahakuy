@@ -17,7 +17,7 @@ const theme = createTheme({
   },
 });
 
-export default function Tentang(props) {
+export default function Tentang() {
   return (
     <div id="tentang">
       <ThemeProvider theme={theme}>

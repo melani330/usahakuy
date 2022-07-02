@@ -35,6 +35,7 @@ export default function Slider() {
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
           >
             <img
+              // eslint-disable-next-line no-undef
               src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`}
               alt="Slider"
             />
@@ -47,6 +48,7 @@ export default function Slider() {
       <div className="container-dots">
         {Array.from({ length: 5 }).map((item, index) => (
           <div
+            key={item}
             onClick={() => moveDot(index + 1)}
             className={slideIndex === index + 1 ? "dot active" : "dot"}
           ></div>

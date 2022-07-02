@@ -8,6 +8,8 @@ import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import { signout } from "../../Redux/userSlice";
+import { useDispatch } from "react-redux";
 // import { Redirect} from "react-router-dom";
 
 export default function LogoutModal() {
@@ -22,13 +24,15 @@ export default function LogoutModal() {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleKeluar=()=>{
-  setOpen(false);
-  window.location.href= '/'
-};
+  const handleKeluar = () => {
+    const dispatch = useDispatch();
+    dispatch(signout());
+    setOpen(false);
+    window.location.href = "/";
+  };
 
   return (
-    <div> 
+    <div>
       <Typography className="btn btn-navbar" onClick={handleClickOpen}>
         Sign Out
       </Typography>
@@ -37,7 +41,6 @@ export default function LogoutModal() {
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
-        
       >
         <DialogTitle id="responsive-dialog-title">
           {"Keluar Aplikasi"}
@@ -52,7 +55,7 @@ export default function LogoutModal() {
             Batal
           </Button>
           <Button autoFocus onClick={handleKeluar}>
-            Keluar 
+            Keluar
           </Button>
         </DialogActions>
       </Dialog>
