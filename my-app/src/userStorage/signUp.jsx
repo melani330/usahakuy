@@ -1,46 +1,88 @@
+
 import React, { useState } from "react";
-import Alert from "@mui/material/Alert";
 import "../css/sign.css";
 import NavbarSignUp from "../components/navbar/navbarSignUp";
-import { Link, Redirect } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import logo from "../images/logo.png";
+import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
-function Registration() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
+function SignUp() {
 
-  const [flag, setFlag] = useState(false);
-  const [login, setLogin] = useState(true);
+  const history = useHistory();
 
-  // on form submit...
-  function handleFormSubmit(e) {
-    e.preventDefault();
+  const [inpval, setInpval] = useState({
+      name: "",
+      email: "",
+      phone: "",
+      password: ""
+  })
 
-    if (!name || !email || !password || !phone) {
-      setFlag(true);
-    } else {
-      setFlag(false);
-      localStorage.setItem("UsahakuySubmissionEmail", JSON.stringify(email));
-      localStorage.setItem(
-        "UsahakuySubmissionPassword",
-        JSON.stringify(password)
-      );
-      console.log("Saved in Local Storage");
+  console.log(inpval);
 
-      setLogin(!login);
-    }
+  const getdata = (e) => {
+
+      const { value, name } = e.target;
+      setInpval(() => {
+          return {
+              ...inpval,
+              [name]: value
+          }
+      })
   }
+
+  const addData = (e) => {
+      e.preventDefault();
+
+      const { name, email, phone, password } = inpval;
+
+      if (name === "") {
+          toast.error(" name field is requred!",{
+              position: "top-center",
+          });
+      } else if (email === "") {
+           toast.error("email field is requred",{
+              position: "top-center",
+          });
+      } else if (!email.includes("@")) {
+           toast.error("plz enter valid email addres",{
+              position: "top-center",
+          });
+      } else if (phone === "") {
+           toast.error("phone field is requred",{
+              position: "top-center",
+          });
+        } else if (phone.length < 11) {
+          toast.error("phone number less than 11 digits",{
+             position: "top-center",
+         });
+        } else if (phone.length > 13) {
+          toast.error("phone number less than 13 digits",{
+             position: "top-center",
+         });
+      } else if (password === "") {
+           toast.error("password field is requred",{
+              position: "top-center",
+          });
+      } else if (password.length < 5) {
+           toast.error("password length greater five",{
+              position: "top-center",
+          });
+      } else {
+          console.log("data added succesfully");
+          localStorage.setItem("userUsahakuy",JSON.stringify([inpval]));
+          history.push("/signIn")
+      }
+  }
+
 
   return (
     <>
       <NavbarSignUp />
       <div className="outer">
         <div className="inner">
-          {login ? (
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={addData}>
               <div className="image-sign">
                 <img src={logo} alt="Logo" width={100} height={100} />
               </div>
@@ -52,8 +94,9 @@ function Registration() {
                 type="text"
                 id="username"
                 label="Nama Lengkap"
+                name="name"
                 autoFocus
-                onChange={(event) => setName(event.target.value)}
+                onChange={getdata}
               ></TextField>
               <TextField
                 margin="normal"
@@ -61,20 +104,22 @@ function Registration() {
                 fullWidth
                 type="email"
                 id="email"
+                name="email"
                 label="Alamat Email"
                 autoComplete="email"
                 autoFocus
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={getdata}
               ></TextField>
               <TextField
                 margin="normal"
                 required
                 fullWidth
                 type="password"
+                name="password"
                 id="password"
                 label="Password"
                 autoFocus
-                onChange={(event) => setPassword(event.target.value)}
+                onChange={getdata}
               ></TextField>
               <TextField
                 margin="normal"
@@ -82,27 +127,25 @@ function Registration() {
                 fullWidth
                 type="phone"
                 id="phone"
+                name="phone"
                 label="No Telephone"
                 autoFocus
-                onChange={(event) => setPhone(event.target.value)}
+                onChange={getdata}
               ></TextField>
               <button type="submit" className="btn btn-sign">
                 Sign Up
               </button>
               <p className="forgot-password text-right">
-                Sudah Memiliki Akun? <Link className="blue" to="/signIn">Sign In</Link>
+                Sudah Memiliki Akun? <NavLink className="blue" to="/signIn">Sign In</NavLink>
               </p>
-              {flag && (
-                <Alert severity="warning">Semua Data Wajib Diisi!</Alert>
-              )}
             </form>
-          ) : (
-            <Redirect from="/signUp" to="/signIn" />
-          )}
+            <ToastContainer />
         </div>
       </div>
     </>
   );
 }
 
-export default Registration;
+export default SignUp;
+
+
