@@ -7,12 +7,10 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   .container-slider {
     margin: 100px 10px 0;
-    
   }
 }
 .slide {
@@ -20,7 +18,7 @@
   height: 100%;
   position: absolute;
   opacity: 0;
-  transition: opacity ease-in-out 0.4s;
+  transition: opacity ease-in-out 0.8s;
 }
 .slide img {
   width: 100%;
@@ -60,7 +58,6 @@
   right: 20px;
   transform: translateY(-60%);
 }
-
 
 .container-dots {
   position: absolute;
