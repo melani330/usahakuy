@@ -8,8 +8,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
-import { signout } from "../../Redux/userSlice";
-import { useDispatch } from "react-redux";
 // import { Redirect} from "react-router-dom";
 
 export default function LogoutModal() {
@@ -25,8 +23,6 @@ export default function LogoutModal() {
     setOpen(false);
   };
   const handleKeluar = () => {
-    const dispatch = useDispatch();
-    dispatch(signout());
     setOpen(false);
     window.location.href = "/";
   };
