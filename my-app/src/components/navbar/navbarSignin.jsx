@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 // import logo from "./logo.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function NavbarSignIn() {
   return (
@@ -14,18 +14,19 @@ export default function NavbarSignIn() {
         <Toolbar>
           {/* <img src={logo} alt="Logo" width={75} height={75} /> */}
           <Button color="inherit" sx={{ marginRight: "auto", color: "black" }}>
-          <Link className="white" to="/"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-               Kembali
+            <Link className="white" to="/">
+              <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+              Kembali
             </Link>
           </Button>
           <Button color="inherit" sx={{ marginLeft: "auto", color: "black" }}>
-          <Link className="white" to="/signUp">
-            Sign Up
+            <Link className="white" to="/signUp">
+              Sign Up
             </Link>
           </Button>
-         
+
           <Typography sx={{ color: "black" }}> | </Typography>
-          <Button color="inherit"  disabled sx={{ color: "black" }}>
+          <Button color="inherit" disabled sx={{ color: "black" }}>
             Sign In
           </Button>
         </Toolbar>
