@@ -42,7 +42,7 @@ npm run build
 
 You can also open the app in the browser by running the following command:
 
-[usahakuy.vercel.app](usahakuy.vercel.app)
+[https://usahakuy.vercel.app](https://usahakuy.vercel.app)
 
 ## Features
 
