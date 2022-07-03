@@ -50,5 +50,5 @@ Here some features of the app:
 
 - Login SignUp
 - Mentor profile
-- Training page to hone entrepreneurship skills
+- Training page to improve entrepreneurship skills
 - etc
