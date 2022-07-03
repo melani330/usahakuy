@@ -48,8 +48,7 @@ You can also open the app in the browser by running the following command:
 
 Here some features of the app:
 
--
--
--
--
--
+- Login SignUp
+- Mentor profile
+- Training page to hone entrepreneurship skills
+- etc
